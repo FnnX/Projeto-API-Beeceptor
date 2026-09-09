@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mural de Dúvidas da Turma</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="cabecalho">
+    <div class="limite">
+      <p class="etiqueta">Programação para Internet</p>
+      <h1>Mural de Dúvidas da Turma</h1>
+      <p class="subtitulo">Vamos buscar publicações em uma API e transformá-las em uma interface útil.</p>
+    </div>
+  </header>
+
+  <main class="limite">
+    <section class="painel-controles" aria-labelledby="titulo-controles">
+      <div>
+        <h2 id="titulo-controles">Publicações</h2>
+        <p>Carregue os dados e pesquise uma palavra presente no título ou no conteúdo.</p>
+      </div>
+
+      <div class="controles">
+        <button id="botao-carregar" type="button">Carregar dúvidas</button>
+        <label class="campo-pesquisa">
+          <span>Pesquisar nas publicações</span>
+          <input id="campo-pesquisa" type="search" placeholder="Ex.: JavaScript" disabled>
+        </label>
+      </div>
+    </section>
+
+    <section class="area-resultado" aria-live="polite" aria-busy="false">
+      <p id="mensagem" class="mensagem mensagem--">Clique em “Carregar dúvidas” para começar.</p>
+      <div id="lista-publicacoes" class="grade-publicacoes"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="limite">Projeto de retomada • JavaScript, assincronismo e <code>fetch()</code></div>
+  </footer>
+
+  <script src="js/mural.js"></script>
+</body>
+</html>
