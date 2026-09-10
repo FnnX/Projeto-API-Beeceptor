@@ -31,7 +31,11 @@ function criarCartao(publicacao) {
 }
 
 function exibirPublicacoes(publicacoes) {
-    listaPublicacoes.innerHTML = publicacoes.map(criarCartao).join("");
+    //ordenando as publicações de acordo com sua quantidade de comentários (dos maior número ao menor)
+    const publicacoesOrdenadas = [...publicacoes]; //[...array] é usado para copiar o array indicado
+    publicacoesOrdenadas.sort((a, b) => b.comment_count - a.comment_count); //sort ordena 'publicacoes' de forma decrescente
+    
+    listaPublicacoes.innerHTML = publicacoesOrdenadas.map(criarCartao).join("");
 }
 
 async function carregarPublicacoes() {
