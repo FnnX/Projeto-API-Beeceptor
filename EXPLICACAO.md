@@ -26,3 +26,8 @@ Como a manipulação posterior utilizará funções nativas de arrays (como o m�
 Caso aconteça alguma falha de conexão na rede ou o status seja recusado (!resposta.ok), a instrução desvia o sistema da execução no bloco try em direção ao bloco catch. Aqui, relatamos amigavelmente na interface a ocorrência com uma formatação avermelhada em HTML, apresentamos as razões no console e prosseguimos usando o finally para desbloquear os botões previamente restritos da aplicação.
 
 # 10. Qual personalização foi implementada e qual foi a maior dificuldade encontrada?
+Foram implementadas 3 personalizações: 
+ a mensagem de resultado é exibida no plural quando são encontradas mais de uma publicação, e no singular quando apenas uma publicação é encontrada;
+ as publicações são ordenas de acordo com a quatidade de comentários, do que possui maior número ao menor;
+ abaixo da mensagem, é exibido um contador com a quantidade total de comentários que as todas publicações exibidas possuem ao serem somadas
+A maior dificuldade foi rearranjar as postagens de forma dinâmica, de forma que fosse ordenadas de acordo com o número de comentários mesmo após uma filtragem

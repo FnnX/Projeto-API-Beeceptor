@@ -4,6 +4,7 @@ const campodePesquisa = document.querySelector("#campo-pesquisa");
 const mensagem = document.querySelector("#mensagem");
 const listaPublicacoes = document.querySelector("#lista-publicacoes");
 const areaResultado = document.querySelector(".area-resultado");
+const qtdComentarios = document.querySelector("#qtdComentarios")
 
 let publicacoesCarregadas = []; 
 
@@ -34,8 +35,15 @@ function exibirPublicacoes(publicacoes) {
     //ordenando as publicações de acordo com sua quantidade de comentários (dos maior número ao menor)
     const publicacoesOrdenadas = [...publicacoes]; //[...array] é usado para copiar o array indicado
     publicacoesOrdenadas.sort((a, b) => b.comment_count - a.comment_count); //sort ordena 'publicacoes' de forma decrescente
+    //contabilizando em uma variável a quantidade total de comentáios nos cartões exibidos 
+    let totalComments = 0;
+    for (const publicacao of publicacoesOrdenadas) {
+        //percorre publicacoesOrdenadas e soma a qtd de comentários
+        totalComments += publicacao.comment_count;
+    }
+    qtdComentarios.textContent = `Total de comentários: ${totalComments}`; //exibe totalComments na tela
     
-    listaPublicacoes.innerHTML = publicacoesOrdenadas.map(criarCartao).join("");
+    listaPublicacoes.innerHTML = publicacoesOrdenadas.map(criarCartao).join(""); //uso de publicacoesOrdenadas
 }
 
 async function carregarPublicacoes() {
@@ -43,6 +51,7 @@ async function carregarPublicacoes() {
     listaPublicacoes.innerHTML = "";
     botaoCarregar.disabled = true;
     campodePesquisa.disabled = true;
+    qtdComentarios.textContent = ``; //reseta o contador de comentários antes de realizar o novo cálculo
     areaResultado.setAttribute("aria-busy", "true");
 
     try {
