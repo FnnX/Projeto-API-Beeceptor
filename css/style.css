@@ -127,3 +127,13 @@ footer { padding: 22px 0; color: var(--cinza-600); background: var(--branco); bo
 }
 
 @media (max-width: 520px) { .grade-publicacoes { grid-template-columns: 1fr; } }
+
+/*estilização do contador de comentários*/
+#qtdComentarios {
+  margin: 0 0 20px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  color: var(--verde-500); 
+  background: var(--verde-100);
+}

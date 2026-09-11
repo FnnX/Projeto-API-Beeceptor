@@ -96,6 +96,7 @@ function filtrarPublicacoes() {
 
     if (resultado.length === 0) {
         alterarMensagem("Nenhuma publicação corresponde à pesquisa.", "inicial");
+        qtdComentarios.textContent = ``;
     } else {
         // Personalização: Tratamento de singular e plural
         const textoPublicacao = resultado.length === 1 ? "publicação encontrada" : "publicações encontradas";
